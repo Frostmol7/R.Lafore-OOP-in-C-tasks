@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+int main() {
+
+    cout << "Enter the number of gallons: ";
+    double gallons; cin >> gallons;
+    double cubicFeet; cubicFeet = gallons/7.481;
+    cout <<"is equals: " << cubicFeet << " cubic feet";
+    
+    return 0;
+}
