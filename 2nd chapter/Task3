@@ -1,0 +1,10 @@
+#include <iostream>
+
+using namespace std;
+int main() {
+    const unsigned int a = 10;
+    unsigned int b;
+    b+=a*2;
+    cout << a << endl << b << endl << --b << endl;
+    return 0;
+}
