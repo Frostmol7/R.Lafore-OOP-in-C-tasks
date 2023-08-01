@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+int main() {
+    cout << " Once upon a midnight dreary, while I pondered, weak and weary,\n"
+            "Over many a quaint and curious volume of forgotten lore—\n"
+            "\tWhile I nodded, nearly napping, suddenly there came a tapping,\n"
+            "As of some one gently rapping, rapping at my chamber door.\n"
+            "\"Tis some visitor,\" I muttered, \"tapping at my chamber door—\n"
+            "\t\tOnly this and nothing more.\"" << endl;
+    return 0;
+}
