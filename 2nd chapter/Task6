@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Enter the number of dollars to be transferred to other currencies" << endl;
+    double dollar, pound, frank, mark, yen;
+    cin >> dollar;
+    pound = dollar/1.487;
+    frank = dollar/0.172;
+    mark = dollar/0.584;
+    yen = dollar/0.00955;
+    cout << "it's equal "<< pound <<" pounds, "<<frank<<" franks, "<<mark<<" marks and "<<yen<<" for yens"<<endl;
+    return 0;
+}
