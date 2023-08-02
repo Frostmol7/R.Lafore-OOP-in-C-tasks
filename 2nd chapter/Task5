@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char a;
+    bool bol;
+    cout<<"Enter the letter"<<endl;
+    cin >> a;
+    bol = islower(a);
+    if (bol)
+        cout <<"You have entered a lowercase letter"<<endl;
+    else
+        cout<<"You have entered a uppercase letter"<<endl;
+    return 0;
+}
