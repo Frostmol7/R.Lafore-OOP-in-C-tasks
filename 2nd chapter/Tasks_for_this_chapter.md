@@ -42,7 +42,7 @@ name and the population number are filled in with periods instead of spaces, as 
 Portcity.....2425785
 
 9. If you have two fractions, a/b and c/d, their sum can be obtained from the formula
-a/b +c/d = (a*d+b*c)/(b*d)
+a/b +c/d = (a*d+b*c)/(b*d).
 For example, 1/4 plus 2/3 is (1*3+4*2)/(4*3) = 11/12
 Write a program that encourages the user to enter two fractions, and then displays their
 sum in fractional form. (You don’t need to reduce it to lowest terms.) The interaction
@@ -54,7 +54,7 @@ You can take advantage of the fact that the extraction operator (>>) can be chai
 read in more than one quantity at once:
 cin >> a >> dummychar >> b;
 
-10. In the heyday of the British empire, Great Britain used a monetary system based on
+11. In the heyday of the British empire, Great Britain used a monetary system based on
 pounds, shillings, and pence. There were 20 shillings to a pound, and 12 pence to a
 shilling. The notation for this old system used the pound sign, £, and two decimal points,
 so that, for example, £5.2.8 meant 5 pounds, 2 shillings, and 8 pence. (Pence is the plural
