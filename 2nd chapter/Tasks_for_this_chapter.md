@@ -42,8 +42,8 @@ name and the population number are filled in with periods instead of spaces, as 
 Portcity.....2425785
 
 9. If you have two fractions, a/b and c/d, their sum can be obtained from the formula
-a/b +c/d = (a*d+b*c)/(b*d).
-For example, 1/4 plus 2/3 is (1*3+4*2)/(4*3) = 11/12
+a/b +c/d = (a\*d + b\*c)/(b\*d).
+For example, 1/4 plus 2/3 is (1\*3+4\*2)/(4\*3) = 11/12
 Write a program that encourages the user to enter two fractions, and then displays their
 sum in fractional form. (You don’t need to reduce it to lowest terms.) The interaction
 with the user might look like this:
