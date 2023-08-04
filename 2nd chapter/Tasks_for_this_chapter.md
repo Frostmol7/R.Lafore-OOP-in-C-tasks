@@ -3,7 +3,7 @@ enter a number of gallons, and then displays the equivalent in cubic feet.
 
 2. Write a program that generates the following table:
 
-| Column 1 | Column 2 |
+| year | number |
 |:------------- |:--------------|
 | 1990         | 135            |
 | 1991         | 7290           |
