@@ -2,46 +2,51 @@
 enter a number of gallons, and then displays the equivalent in cubic feet.
 
 2. Write a program that generates the following table:
-  1990    135
-  1991   7290
-  1992  11300
-  1993  16200
+
+| Column 1 | Column 2 |
+|:------------- |:--------------|
+| 1990         | 135            |
+| 1991         | 7290           |
+| 1992         | 11300          |
+| 1993         | 16200          |
+
+
 Use a single cout statement for all output.
 
-3. Write a program that generates the following output:
+4. Write a program that generates the following output:
   10
   20
   19
 Use an integer constant for the 10, an arithmetic assignment operator to generate the 20,
 and a decrement operator to generate the 19.
 
-4. Write a program that displays your favorite poem. Use an appropriate escape sequence
+5. Write a program that displays your favorite poem. Use an appropriate escape sequence
 for the line breaks. If you don’t have a favorite poem, you can borrow this one by Ogden
 Nash:
     Candy is dandy,
     But liquor is quicker.
 
-5. A library function, islower(), takes a single character (a letter) as an argument and
+6. A library function, islower(), takes a single character (a letter) as an argument and
 returns a nonzero integer if the letter is lowercase, or zero if it is uppercase. This function requires the header file CTYPE.H. Write a program that allows the user to enter a letter, and then displays either zero or nonzero, depending on whether a lowercase or
 uppercase letter was entered. (See the SQRT program for clues.)
 
-6. On a certain day the British pound was equivalent to $1.487 U.S., the French franc was
+7. On a certain day the British pound was equivalent to $1.487 U.S., the French franc was
 $0.172, the German deutschemark was $0.584, and the Japanese yen was $0.00955.
 Write a program that allows the user to enter an amount in dollars, and then displays this
 value converted to these four other monetary units.
 
-7. You can convert temperature from degrees Celsius to degrees Fahrenheit by multiplying
+8. You can convert temperature from degrees Celsius to degrees Fahrenheit by multiplying
 by 9/5 and adding 32. Write a program that allows the user to enter a floating-point number representing degrees Celsius, and then displays the corresponding degrees
 Fahrenheit.
 
-8. When a value is smaller than a field specified with setw(), the unused locations are, by
+9. When a value is smaller than a field specified with setw(), the unused locations are, by
 default, filled in with spaces. The manipulator setfill() takes a single character as an
 argument and causes this character to be substituted for spaces in the empty parts of a
 field. Rewrite the WIDTH program so that the characters on each line between the location
 name and the population number are filled in with periods instead of spaces, as in
 Portcity.....2425785
 
-9. If you have two fractions, a/b and c/d, their sum can be obtained from the formula
+10. If you have two fractions, a/b and c/d, their sum can be obtained from the formula
 a/b +c/d = (a\*d + b\*c)/(b\*d) For example, 1/4 plus 2/3 is (1\*3+4\*2)/(4\*3) = 11/12
 Write a program that encourages the user to enter two fractions, and then displays their
 sum in fractional form. (You don’t need to reduce it to lowest terms.) The interaction
