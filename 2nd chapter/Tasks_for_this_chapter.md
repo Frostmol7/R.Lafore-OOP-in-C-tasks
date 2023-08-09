@@ -43,19 +43,20 @@ Fahrenheit.
 default, filled in with spaces. The manipulator setfill() takes a single character as an
 argument and causes this character to be substituted for spaces in the empty parts of a
 field. Rewrite the WIDTH program so that the characters on each line between the location
-name and the population number are filled in with periods instead of spaces, as in
+name and the population number are filled in with periods instead of spaces, as in     
 Portcity.....2425785
 
-9. If you have two fractions, a/b and c/d, their sum can be obtained from the formula
-a/b +c/d = (a\*d + b\*c)/(b\*d) For example, 1/4 plus 2/3 is (1\*3+4\*2)/(4\*3) = 11/12
+9. If you have two fractions, a/b and c/d, their sum can be obtained from the formula    
+a/b +c/d = (a\*d + b\*c)/(b\*d)    
+For example, 1/4 plus 2/3 is (1\*3+4\*2)/(4\*3) = 11/12    
 Write a program that encourages the user to enter two fractions, and then displays their
 sum in fractional form. (You don’t need to reduce it to lowest terms.) The interaction
-with the user might look like this:
-Enter first fraction: 1/2
-Enter second fraction: 2/5
-Sum = 9/10
+with the user might look like this:     
+Enter first fraction: 1/2     
+Enter second fraction: 2/5    
+Sum = 9/10    
 You can take advantage of the fact that the extraction operator (>>) can be chained to
-read in more than one quantity at once:
+read in more than one quantity at once:    
 cin >> a >> dummychar >> b;
 
 10. In the heyday of the British empire, Great Britain used a monetary system based on
@@ -64,12 +65,11 @@ shilling. The notation for this old system used the pound sign, £, and two deci
 so that, for example, £5.2.8 meant 5 pounds, 2 shillings, and 8 pence. (Pence is the plural
 of penny.) The new monetary system, introduced in the 1950s, consists of only pounds
 and pence, with 100 pence to a pound (like U.S. dollars and cents). We’ll call this new
-system decimal pounds. Thus £5.2.8 in the old notation is £5.13 in decimal pounds (actually £5.1333333). Write a program to convert the old pounds-shillings-pence format to
-decimal pounds. An example of the user’s interaction with the program would be
-Enter pounds: 7
-Enter shillings: 17
-Enter pence: 9
-Decimal pounds = £7.89
+system decimal pounds. Thus £5.2.8 in the old notation is £5.13 in decimal pounds (actually £5.1333333). Write a program to convert the old pounds-shillings-pence format to decimal pounds. An example of the user’s interaction with the program would be    
+Enter pounds: 7    
+Enter shillings: 17    
+Enter pence: 9    
+Decimal pounds = £7.89    
 In most compilers you can use the decimal number 156 (hex character constant ‘\x9c’)
 to represent the pound sign (£). In some compilers, you can put the pound sign into your
 program directly by pasting it from the Windows Character Map accessory.
@@ -77,23 +77,24 @@ program directly by pasting it from the Windows Character Map accessory.
 11. By default, output is right-justified in its field. You can left-justify text output using the
 manipulator setiosflags(ios::left). (For now, don’t worry about what this new notation
 means.) Use this manipulator, along with setw(), to help generate the following output:
-Last name First name Street address Town State
-------------------------------------------------------------
-Jones Bernard 109 Pine Lane Littletown MI
-O’Brian Coleen 42 E. 99th Ave. Bigcity NY
-Wong Harry 121-A Alabama St. Lakeville IL
+
+|Last name|First name|Street address   |Town State   |
+|:--------|:---------|:----------------|:------------|
+| Jones   | Bernard  |109 Pine Lane    |Littletown MI|
+| O’Brian | Coleen   |42 E. 99th Ave.  |Bigcity NY   |
+| Wong    | Harry    |121-A Alabama St.|Lakeville IL |
 
 12. Write the inverse of Exercise 10, so that the user enters an amount in Great Britain’s new
 decimal-pounds notation (pounds and pence), and the program converts it to the old
-pounds-shillings-pence notation. An example of interaction with the program might be
-Enter decimal pounds: 3.51
-Equivalent in old notation = £3.10.2.
+pounds-shillings-pence notation. An example of interaction with the program might be     
+Enter decimal pounds: 3.51    
+Equivalent in old notation = £3.10.2.     
 Make use of the fact that if you assign a floating-point value (say 12.34) to an integer
 variable, the decimal fraction (0.34) is lost; the integer value is simply 12. Use a cast to
-avoid a compiler warning. You can use statements like
-float decpounds; // input from user (new-style pounds)
-int pounds; // old-style (integer) pounds
-float decfrac; // decimal fraction (smaller than 1.0)
-pounds = static_cast<int>(decpounds); // remove decimal fraction
-decfrac = decpounds - pounds; // regain decimal fraction
+avoid a compiler warning. You can use statements like    
+float decpounds; // input from user (new-style pounds)     
+int pounds; // old-style (integer) pounds    
+float decfrac; // decimal fraction (smaller than 1.0)    
+pounds = static_cast<int>(decpounds); // remove decimal fraction    
+decfrac = decpounds - pounds; // regain decimal fraction    
 You can then multiply decfrac by 20 to find shillings. A similar operation obtains pence.
