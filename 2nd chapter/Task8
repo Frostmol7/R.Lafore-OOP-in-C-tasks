@@ -1,0 +1,12 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main() {
+	int first = 2134, second = 234, third = 42;
+	cout << "Town" << setfill('.') << setw(20) << "population" << endl;
+	cout << "Moscow" << setw(20) << first << endl;
+	cout << "Bacup" << setw(20) << second << endl;
+	cout << "Bampton" << setw(20) << third << endl;
+	return 0;
+}
