@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int pounds, shillings, pence; //f -фунты, s -шиллинги, p -пенсы
+	cout << "Enter pounds: ";
+	cin >> pounds;
+	cout << "Enter shillings: ";
+	cin >> shillings;
+	cout << "Enter pence: ";
+	cin >> pence;
+	cout << "Decimal pounds = \x9C " << pounds + ((static_cast<float>(shillings) * 12 + pence) / 240) << endl;
+
+	return 0;
+}
