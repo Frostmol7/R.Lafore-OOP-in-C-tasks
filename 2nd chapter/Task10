@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	int pounds, shillings, pence; //f -фунты, s -шиллинги, p -пенсы
+	int pounds, shillings, pence; 
 	cout << "Enter pounds: ";
 	cin >> pounds;
 	cout << "Enter shillings: ";
