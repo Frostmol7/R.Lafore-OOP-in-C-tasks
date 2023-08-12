@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	float decpounds; // input from user (new-style pounds)
+	int pounds; // old-style (integer) pounds
+	float decfrac; // decimal fraction (smaller than 1.0)
+
+	cout << "Enter decimal pounds:  ";
+	cin >> decpounds;
+
+	pounds = static_cast<int>(decpounds); // remove decimal fraction
+	decfrac = (decpounds - pounds) * 20; // regain decimal fractio then multiply decfrac by 20 to find shillings
+
+	static_cast<int>(decpounds);
+	decpounds = static_cast<int>((decfrac - static_cast<int>(decfrac)) * 12);
+	cout << "Equivalent amount in previous notation: £" << pounds << '.' << static_cast<int>(decfrac) << '.' << decpounds << endl;
+
+	return 0;
+}
