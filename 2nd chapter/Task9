@@ -8,6 +8,6 @@ int main()
     cin >> a >> dummychar >> b;
     cout << "Enter second fraction:";
     cin >> c >> dummychar >> d;
-    cout << "Sum = " << (a*d+b*c) << dummychar << (b*d);
+    cout << "Sum = £" << (a*d+b*c) << dummychar << (b*d);
     return 0;
 }
