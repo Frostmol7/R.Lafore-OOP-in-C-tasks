@@ -9,4 +9,5 @@ int main()
     cout<< setiosflags(ios::left) << setw(15) << "Jones" << setiosflags(ios::left) << setw(15) << "Bernard" << setiosflags(ios::left) << setw(30) << "109 Pine Lane" << setiosflags(ios::left) << setw(15) << "Littletown MI" << endl
         << setiosflags(ios::left) << setw(15) << "O’Brian" << setiosflags(ios::left) << setw(15) << "Coleen" << setiosflags(ios::left) << setw(30) << "42 E. 99th Ave." << setiosflags(ios::left) << setw(15) << "Bigcity NY" << endl
         << setiosflags(ios::left) << setw(15) << "Wong" << setiosflags(ios::left) << setw(15) << "Harry" << setiosflags(ios::left) << setw(30) << "121-A Alabama St." << setiosflags(ios::left) << setw(15) << "Lakeville IL" << endl;
+    return 0;
 }
