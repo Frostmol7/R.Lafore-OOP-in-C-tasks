@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numb;
+    int mult = 1; // multiplier 
+    cout << "Enter a number:";
+    cin >> numb;
+
+    for (int i = 1; i <= 20; i++) {
+        for (int j = 1; j <= 10; j++) {
+            
+            cout << numb * mult <<"\t";
+            mult++;
+        }
+        cout << endl;
+    }
+    return 0;
+}
