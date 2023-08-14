@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choose, again;
+    bool flag = 1;
+    while (flag)
+    {
+        cout << "Type 1 to convert Fahrenheit to Celsius, 2 to convert Celsius to Fahrenheit:";
+        cin >> choose;
+        cout << endl;
+    
+        switch (choose)
+        {
+            case 1: 
+                cout << "Enter temperature in Fahrenheit " << endl;
+                float fahrenheit;
+                cin >> fahrenheit;
+                cout << "Celsius degrees:" << (fahrenheit - 32) * 5/9 << endl;
+
+                cout << "You want try again?" << endl << "1: again" << endl << "else: stop" << endl;
+                cin >> again;
+                if (again != 1) {
+                    flag = false;
+                }
+                break;
+
+            case 2: 
+                cout << "Enter temperature in Celsius" << endl;
+                float cels;
+                cin >> cels;
+                cout << "Fahrenheit degrees:" << (cels * 9) / 5 + 32 << endl;
+
+                cout << "You want try again?" << endl << "1: again" << endl << "else: stop" << endl;
+                cin >> again;
+                if (again != 1) {
+                    flag = false;
+                }
+                break;
+
+            default: 
+                cout << "tru again" << endl << endl;;
+                break;
+        }
+        
+        
+    }
+    return 0;
+}
