@@ -1,0 +1,17 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+    int total = 0;
+    char ch;
+    cout << "Enter a number: ";
+    
+    while ((ch = getchar()) != '\n');
+        total = total * 10 + (ch - 48);
+    cout << "Number is: " << total;     //it works strainge, I'll fix it a little later 
+
+    return 0;
+}
