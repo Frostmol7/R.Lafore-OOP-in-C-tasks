@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+	float a, b;
+	char x;
+	bool i=1;
+	while (i) {
+		cout << "Enter first number, operator, second number: ";
+		cin >> a >> x >> b;
+
+		if (x == '+')
+			cout << "Answer = " << a + b << endl;
+		else if (x == '-')
+			cout << "Answer = " << a - b << endl;
+		else if (x == '*')
+			cout << "Answer = " << a * b << endl;
+		else if (x == '/')
+			cout << "Answer = " << a / b << endl;
+		else
+			cout << "operator didn't exist";
+
+		cout << "Try again?" << endl << "0:stop" << endl;
+		cin >> i;
+	}
+  return 0;
+}
