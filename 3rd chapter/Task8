@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char contine;
+	do {
+		char dumb;
+		int pounds, shillings, pence, sndpounds, sndshillings, sndpence;
+		cout << "Enter first amount: ";
+		cin >> pounds>>dumb>>shillings>>dumb>>pence;
+		
+		cout << "Enter second amount: ";
+		cin >> sndpounds >> dumb >> sndshillings >> dumb >> sndpence;
+	
+
+		pence += sndpence;
+		(pence >= 12) ? pence -= 12, shillings++ : pence = pence;
+
+		shillings += sndshillings;
+		(shillings >= 20) ? shillings -= 20, pounds++ : shillings = shillings;
+
+		pounds += sndpounds;
+
+		cout << "Total is " << pounds << dumb << shillings << dumb << pence << endl;
+		cout << "Do you wish to continue (y/n)?" << endl;
+		cin >> contine;
+	} while (contine == 'y');
+	return 0;
+}
