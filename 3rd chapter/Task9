@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int chairs, guests, total = 1;
+    cout << "Enter the number of chairs: ";
+    cin >> chairs;
+    cout << "Enter the number of guests (no less than chairs): ";
+    cin >> guests;
+
+    for (int i = chairs; i > 0; i--, guests--) 
+    {
+        total *= guests;
+    }
+    cout << total;
+}
