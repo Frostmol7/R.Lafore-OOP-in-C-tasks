@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float money, percent, result;
+    int years =0;
+    cout << "Enter initial amount: ";
+    cin >> money;
+    cout << "Enter number money you need to have: ";
+    cin >> result;
+    cout << "Enter interest rate (percent per year): ";
+    cin >> percent;
+
+    do
+    {
+        money +=(money * percent*0.01);
+        years++;
+    } 
+    while(money <= result);
+
+    cout << "At the end of " << years << " years, you will have " << money << " dollars." << endl;
+    return 0;
+}
