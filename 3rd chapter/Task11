@@ -1,0 +1,125 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	unsigned int pounds, shillings, pence, choose, sndchoose, sndpounds, sndshillings, sndpence;
+	
+	cout << "Enter pounds: ";
+	cin >> pounds;
+	cout << "Enter shillings: ";
+	cin >> shillings;
+	cout << "Enter pence: ";
+	cin >> pence;
+
+	cout << "Enter second pounds: ";
+	cin >> sndpounds;
+	cout << "Enter second shillings: ";
+	cin >> sndshillings;
+	cout << "Enter second pence: ";
+	cin >> sndpence;
+
+	do 
+	{
+		cout << "Enter what do you whant to do: \n 0: addition \n 1:subtraction \n 2:multiplication \n 3:division" << endl;
+		cin >> choose;
+	} while (choose > 3);
+
+	switch (choose)
+	{
+		case(0):
+			pence += sndpence;
+			(pence >= 12) ? pence -= 12, shillings++ : pence = pence;
+
+			shillings += sndshillings;
+			(shillings >= 20) ? shillings -= 20, pounds++ : shillings = shillings;
+
+			pounds += sndpounds;
+			cout << pounds << "." << shillings << "." << pence;
+			break;
+
+		case(1):
+			pounds -= sndpounds;
+
+			(shillings < sndshillings) ? shillings += 20, pounds--, shillings -= sndshillings : shillings -= sndshillings;
+			
+			(pence < sndpence) ? pence += 12, shillings--, pence -= sndpence : pence -= sndpence;
+			cout << pounds << "." << shillings << "." << pence;
+			break;
+
+	case(2):
+		do
+		{
+			cout << "which number do you wanna multiply? \n 0: first \n 1: second" << endl;
+			cin >> sndchoose;
+		} while (sndchoose > 1);
+
+		switch (sndchoose)
+		{
+		case(0):
+			pence *= 2;
+			shillings *= 2;
+			pounds *= 2;
+			
+			(pence >= 12) ? pence -= 12, shillings++ : pence = pence;
+			(shillings >= 20) ? shillings -= 20, pounds++ : shillings = shillings;
+
+			cout << pounds << "." << shillings << "." << pence;
+			break;
+
+		case(1):
+			sndpence *= 2;
+			sndshillings *= 2;
+			sndpounds *= 2;
+
+			(sndpence >= 12) ? sndpence -= 12, sndshillings++ : sndpence = sndpence;
+			(sndshillings >= 20) ? sndshillings -= 20, sndpounds++ : sndshillings = sndshillings;
+
+			cout << sndpounds << "." << sndshillings << "." << sndpence;
+			break;
+		}
+			
+		
+		break;
+
+	case(3):
+		int divisor;
+		do
+		{
+			cout << "which number do you wanna division? \n 0: first \n 1: second" << endl;
+			cin >> sndchoose;
+		} while (sndchoose > 1);
+
+		switch (sndchoose)
+		{
+		case(0):
+			cout << "enter divisor" << endl;
+			cin >> divisor;
+			pence /= divisor;
+			shillings /= divisor;
+			pounds /= divisor;
+
+			(pence >= 12) ? pence -= 12, shillings++ : pence = pence;
+			(shillings >= 20) ? shillings -= 20, pounds++ : shillings = shillings;
+
+			cout << pounds << "." << shillings << "." << pence;
+			break;
+
+		case(1):
+			cout << "enter divisor" << endl;
+			cin >> divisor;
+
+			sndpence /= divisor;
+			sndshillings /= divisor;
+			sndpounds /= divisor;
+
+			(sndpence >= 12) ? sndpence -= 12, sndshillings++ : sndpence = sndpence;
+			(sndshillings >= 20) ? sndshillings -= 20, sndpounds++ : sndshillings = sndshillings;
+
+			cout << sndpounds << "." << sndshillings << "." << sndpence;
+			break;
+		}
+		break;
+	}
+	return 0;
+}
