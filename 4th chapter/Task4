@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+struct employee
+{
+    int number;
+    float compensation;
+};
+
+int main()
+{
+    const int i = 3;
+    employee struct1[i];
+
+    for (int j = 0; j < i; j++)
+    {
+        cout << "Enter employee number: ";
+        cin >> struct1[j].number;
+
+        cout << "Enter employee’s compensation: ";
+        cin >> struct1[j].compensation;
+        cout << endl;
+    }
+
+    for (int j = 0; j < i; j++)
+        cout << "Employee number: " << struct1[j].number << " ---> employee’s compensation : " << struct1[j].compensation << endl;
+}
