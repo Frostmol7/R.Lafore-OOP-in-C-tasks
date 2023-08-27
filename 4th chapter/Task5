@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+struct date 
+{
+    int day;
+    int month;
+    int year;
+    char dumb;
+};
+
+int main()
+{
+    date today;
+    
+    cout << "Enter today date by example day/month/year: ";
+    cin >> today.day >> today.dumb >> today.month >> today.dumb >> today.year;
+    cout << "Today is " << today.day << today.dumb << today.month << today.dumb << today.year;
+
+    return 0;
+}
