@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+enum etype { laborer, secretary, manager, accountant, executive, researcher };
+
+int main()
+{
+    etype employeeType;
+    char firstLetter;
+    cout << "Enter employee type (first letter only)" << endl;
+    cout << "laborer, secretary, manager, accountant, executive, researcher: ";
+    cin >> firstLetter;
+
+    switch (firstLetter)
+    {
+    case('l'): 
+        employeeType = laborer; 
+        break;
+
+    case('s'):
+        employeeType = secretary;
+        break;
+
+    case('m'):
+        employeeType = manager;
+        break;
+
+    case('a'):
+        employeeType = accountant;
+        break;
+
+    case('e'):
+        employeeType = executive;
+        break;
+
+    case('r'):
+        employeeType = researcher;
+        break;
+
+    default:
+        break;
+    }
+
+    switch (employeeType) {
+    case laborer:
+        cout << "Employee type is laborer";
+        break;
+
+    case secretary:
+        cout << "Employee type is secretary";
+        break;
+
+    case manager:
+        cout << "Employee type is manager";
+        break;
+
+    case accountant:
+        cout << "Employee type is accountant";
+        break;
+
+    case executive:
+        cout << "Employee type is executive";
+        break;
+
+    case researcher:
+        cout << "Employee type is researcher";
+        break;
+
+    default:
+        break;
+    }
+    return 0;
+}
