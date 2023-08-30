@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+
+enum etype { laborer, secretary, manager, accountant, executive, researcher };
+
+struct date
+{
+    int day;
+    int month;
+    int year;
+};
+
+struct employee
+{
+    int number;
+    float compensation;
+    etype employeeType;
+    date dateOfEmployment;
+};
+
+int main()
+{
+    char damb, firstLetter;
+    const int i = 3;
+    employee struct1[i];
+
+    for (int j = 0; j < i; j++)
+    {
+        cout << "Enter employee number: ";
+        cin >> struct1[j].number;
+
+        cout << "Enter employee's compensation: ";
+        cin >> struct1[j].compensation;
+
+        cout << "Enter the date of employment: ";
+        cin >> struct1[j].dateOfEmployment.day >> damb >> struct1[j].dateOfEmployment.month >> damb >> struct1[j].dateOfEmployment.year;
+
+        cout << "Enter employee type (first letter only)" << endl;
+        cout << "laborer, secretary, manager, accountant, executive, researcher: ";
+        cin >> firstLetter;
+
+        switch (firstLetter)
+        {
+        case('l'):
+            struct1[j].employeeType = laborer;
+            break;
+
+        case('s'):
+            struct1[j].employeeType = secretary;
+            break;
+
+        case('m'):
+            struct1[j].employeeType = manager;
+            break;
+
+        case('a'):
+            struct1[j].employeeType = accountant;
+            break;
+
+        case('e'):
+            struct1[j].employeeType = executive;
+            break;
+
+        case('r'):
+            struct1[j].employeeType = researcher;
+            break;
+
+        default:
+            break;
+        }
+        cout << endl;
+    }
+
+    for (int j = 0; j < i; j++)
+    {
+        cout << "Employee number: " << struct1[j].number << endl
+            << "Employee's compensation: " << struct1[j].compensation
+            << "\nDate of employment: " << struct1[j].dateOfEmployment.day << damb << struct1[j].dateOfEmployment.month << damb << struct1[j].dateOfEmployment.year << endl;
+        switch (struct1[j].employeeType) {
+        case laborer:
+            cout << "Employee type is laborer";
+            break;
+
+        case secretary:
+            cout << "Employee type is secretary";
+            break;
+
+        case manager:
+            cout << "Employee type is manager";
+            break;
+
+        case accountant:
+            cout << "Employee type is accountant";
+            break;
+
+        case executive:
+            cout << "Employee type is executive";
+            break;
+
+        case researcher:
+            cout << "Employee type is researcher";
+            break;
+
+        default:
+            break;
+
+        }
+
+        cout << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
