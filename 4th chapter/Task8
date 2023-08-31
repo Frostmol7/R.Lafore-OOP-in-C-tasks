@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+struct fraction
+{
+    int Numerator;
+    int Denominator;
+};
+
+
+int main()
+{
+    fraction a, b;
+    char dummychar;
+    cout << "Enter first fraction:";
+    cin >> a.Numerator >> dummychar >> a.Denominator;
+    cout << "Enter second fraction:";
+    cin >> b.Numerator >> dummychar >> b.Denominator;
+    cout << "Sum = " << (a.Numerator * b.Denominator + a.Denominator * b.Numerator) << dummychar << (b.Denominator*a.Denominator);
+    return 0;
+}
