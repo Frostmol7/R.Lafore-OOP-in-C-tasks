@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+int main()
+{
+    char damb;
+    Time time;
+
+    cout << "Enter the time in the format 23:59:59 to convert to seconds" << endl;
+    cin >> time.hours >> damb >> time.minutes >> damb >> time.seconds;
+    cout << "In seconds it equals " << time.hours * 3600 + time.minutes * 60 + time.seconds;
+
+    return 0;
+}
