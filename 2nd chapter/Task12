@@ -12,7 +12,6 @@ int main()
 	pounds = static_cast<int>(decpounds); // remove decimal fraction
 	decfrac = (decpounds - pounds) * 20; // regain decimal fractio then multiply decfrac by 20 to find shillings
 
-	static_cast<int>(decpounds);
 	decpounds = static_cast<int>((decfrac - static_cast<int>(decfrac)) * 12);
 	cout << "Equivalent amount in previous notation: £" << pounds << '.' << static_cast<int>(decfrac) << '.' << decpounds << endl;
 
