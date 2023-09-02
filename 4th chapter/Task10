@@ -16,12 +16,11 @@ int main()
     cout << "Enter decimal pounds:  ";
     cin >> newStile;
 
-    oldStile.pounds = static_cast<int>(newStile); // remove decimal fraction
-    oldStile.shillings = (newStile - oldStile.pounds) * 20; // regain decimal fractio then multiply oldStile.shillings by 20 to find shillings
-
-    static_cast<int>(newStile);
-    newStile = static_cast<int>((oldStile.shillings - static_cast<int>(oldStile.shillings)) * 12);
-    cout << "Equivalent amount in previous notation: £" << oldStile.pounds << '.' << static_cast<int>(oldStile.shillings) << '.' << newStile << endl;
+    oldStile.pounds = static_cast <int>(newStile);
+    oldStile.shillings = static_cast <int> ((newStile - oldStile.pounds) * 20);
+    oldStile.pence = static_cast <int> (((newStile - oldStile.pounds) * 20 - oldStile.shillings) * 12);
+    
+    cout << "Equivalent amount in previous notation: £" << oldStile.pounds << "." << oldStile.shillings << "." << oldStile.pence;
 
     return 0;
 }
