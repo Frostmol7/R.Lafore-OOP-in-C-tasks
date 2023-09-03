@@ -45,7 +45,7 @@ int main(){
 				break;
 		}
 		cout << "Do you want to continue (y/n): ";
-		cin >> shoose;
+		cin >> choose;
 	}while(choose == 'y');
 	
 	return 0;
