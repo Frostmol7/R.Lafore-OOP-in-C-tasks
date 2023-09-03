@@ -41,6 +41,12 @@ int main()
 
             default: 
                 cout << "tru again" << endl << endl;;
+                cout << "You want try again?" << endl << "1: again" << endl << "else: stop" << endl;
+                cin >> again;
+                if (again != 1) {
+                    flag = false;
+                }
+                
                 break;
         }
         
