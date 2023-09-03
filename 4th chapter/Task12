@@ -1,0 +1,59 @@
+#include<iostream>
+
+using namespace std;
+
+struct fraction
+{
+	int Numerator;
+	int Denominator;
+};
+
+int main() 
+{
+	char choose;
+	do {
+		fraction a, b;
+		char dumb, option;
+		cout << "Enter first fraction: ";
+		cin >> a.Numerator >> dumb >> a.Denominator;
+		cout << "Operator: ";
+		cin >> option;
+		cout << "Enter second fraction: ";
+		cin >> b.Numerator >> dumb >> b.Denominator;
+
+		switch (option) {
+		case '+':
+
+			a.Numerator = a.Numerator * b.Denominator + b.Numerator * a.Denominator;
+			a.Denominator = a.Denominator * b.Denominator;
+			cout << "Sum is: " << a.Numerator << dumb << a.Denominator << endl;
+			break;
+
+		case '-':
+			a.Numerator = a.Numerator * b.Denominator - b.Numerator * a.Denominator;
+			a.Denominator = a.Denominator * b.Denominator;
+			cout << "Subtraction is: " << a.Numerator << dumb << a.Denominator << endl;
+			break;
+
+		case '*':
+			a.Numerator = a.Numerator * b.Numerator;
+			a.Denominator = a.Denominator * b.Denominator;
+			cout << "Multiplication is: " << a.Numerator << dumb << a.Denominator << endl;
+			break;
+
+		case '/':
+			a.Numerator = a.Numerator * b.Denominator;
+			a.Numerator = a.Denominator * b.Numerator;
+			cout << "Division is: " << a.Numerator << dumb << a.Denominator << endl;
+			break;
+
+		default:
+			cout << "try again";
+			break;
+		}
+		cout << "Do you want to continue (y/n): ";
+		cin >> choose;
+	} while (choose == 'y');
+
+	return 0;
+}
