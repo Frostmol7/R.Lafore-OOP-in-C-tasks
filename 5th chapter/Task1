@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+float circarea(float a)
+{
+    const float PI = 3.14159F;
+    float area;
+    area = PI * a * a;
+    return area;
+}
+
+int main()
+{
+    float rad;
+    cout << "Enter radius of circle: ";
+    cin >> rad;
+    rad = circarea(rad);
+    cout << "Area is " << rad;
+}
