@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+double power(double n, int p = 2)
+{
+	double result = n;
+	for (; p != 1; p--)
+		result *= n;
+	return result;
+}
+
+int main()
+{
+	char awnser;
+	double n;
+	int p;
+	cout << "Enter number" << endl;
+	cin >> n;
+	cout << "Do you want to specify the degree of a number? (Y/N)" << endl;
+	cin >> awnser;
+	awnser == 'Y' ?cin >> p, cout << power(n, p) : cout << power(n);
+	
+	return 0;
+}
