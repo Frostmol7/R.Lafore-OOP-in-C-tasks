@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void zeroSmaller(int& a, int& b)
+{
+    a < b ? a = 0 : b = 0;
+}
+
+int main()
+{
+    int first, second;
+    cout << "Enter two numbers!"<< endl;
+    cin >> first >> second;
+    zeroSmaller(first, second);
+    cout << first << "  " << second;
+
+    return 0;
+}
