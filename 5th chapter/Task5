@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+long hms_to_secs(int hours, int minutes, int second)
+{
+    return hours * 3600 + minutes * 60 + second;
+}
+
+
+
+int main()
+{
+    Time time1;
+    char damb;
+    cout << "Enter the time in the format 23:59:59 to transform into seconds" << endl;
+    cin >> time1.hours >> damb >> time1.minutes >> damb >> time1.seconds;
+    cout << "In seconds is" << hms_to_secs(time1.hours, time1.minutes, time1.minutes);
+
+    return 0;
+}
