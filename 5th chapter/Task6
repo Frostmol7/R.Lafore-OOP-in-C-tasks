@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+int time_to_secs(int hours, int minutes, int seconds)
+{
+    return hours * 3600 + minutes * 60 + seconds;
+}
+
+Time secs_to_time(int seconds)
+{
+    Time result;
+    result.hours = seconds / 3600; seconds -= result.hours * 3600;
+    result.minutes = seconds / 60; seconds -= result.hours * 60;
+    result.seconds = seconds;
+    return result;
+}
+
+int main()
+{
+    char damb;
+    int i;
+    Time time1, time2;
+
+    cout << "Enter the time in the format 23:59:59 to add" << endl;
+    cin >> time1.hours >> damb >> time1.minutes >> damb >> time1.seconds;
+
+    cout << "Enter the second time in the format 23:59:59 to add" << endl;
+    cin >> time2.hours >> damb >> time2.minutes >> damb >> time2.seconds;
+
+    i = time_to_secs(time1.hours, time1.minutes, time1.seconds);
+    i += time_to_secs(time2.hours, time2.minutes, time2.seconds);
+
+    time2 = secs_to_time(i);
+
+    cout << "Summ of two times equals " << time2.hours << ":" << time2.minutes << ":" << time2.seconds << endl;
+
+    return 0;
+}
