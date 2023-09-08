@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+struct Distance
+{
+    int feet;
+    float inches;
+};
+
+Distance choose(Distance a, Distance b)
+{
+    Distance bigger, j;
+    j.inches = a.feet * 12 + a.inches;
+    j.inches < b.feet * 12 + b.inches ? bigger = b : bigger = b;
+    return bigger;
+}
+
+int main()
+{
+    Distance first, second, awnser;
+    char damb;
+    cout << "Enter two distance's to return the larger one" << endl;
+    cin >> first.feet >> damb >> first.inches >> damb;
+    cin >> second.feet >> damb >> second.inches >> damb;
+    awnser = choose(first, second);
+    cout << "The bigger one is " << awnser.feet << "'" << awnser.inches << "\"";
+    
+    return 0;
+}
