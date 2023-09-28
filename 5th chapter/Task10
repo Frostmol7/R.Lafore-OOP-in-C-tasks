@@ -20,7 +20,7 @@ int main()
     for (int j = 0; j<15 ; j++)
         fun();
 
-cout << endl;
+    cout << endl;
 
     for (int j = 0; j<15 ; j++)
         unfun();
