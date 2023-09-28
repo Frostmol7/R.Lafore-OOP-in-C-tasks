@@ -1,0 +1,73 @@
+#include<iostream>
+using namespace std;
+
+struct fraction
+{
+    int Numerator = 0;
+    int Denominator = 0;
+};
+
+void fadd(fraction a, fraction b)
+{
+    a.Numerator = a.Numerator * b.Denominator + b.Numerator * a.Denominator;
+    a.Denominator = a.Denominator * b.Denominator;
+    cout << "Sum is: " << a.Numerator << '/' << a.Denominator << endl;
+}
+
+void fsub(fraction a, fraction b)
+{
+    a.Numerator = a.Numerator * b.Denominator - b.Numerator * a.Denominator;
+    a.Denominator = a.Denominator * b.Denominator;
+    cout << "Subtraction is: " << a.Numerator << '/' << a.Denominator << endl;
+}
+
+void fmul(fraction a, fraction b)
+{
+    a.Numerator = a.Numerator * b.Numerator;
+    a.Denominator = a.Denominator * b.Denominator;
+    cout << "Multiplication is: " << a.Numerator << '/' << a.Denominator << endl;
+}
+
+void fdiv(fraction a, fraction b)
+{
+    a.Numerator = a.Numerator * b.Denominator;
+    a.Numerator = a.Denominator * b.Numerator;
+    cout << "Division is: " << a.Numerator << '/' << a.Denominator << endl;
+}
+
+int main()
+{
+    char choose;
+    do {
+        fraction a, b;
+        char dumb, option;
+        cout << "Enter first fraction: ";
+        cin >> a.Numerator >> dumb >> a.Denominator;
+        cout << "Operator: ";
+        cin >> option;
+        cout << "Enter second fraction: ";
+        cin >> b.Numerator >> dumb >> b.Denominator;
+
+        switch (option) {
+            case '+':fadd(a,b);
+                break;
+
+            case '-':fsub(a,b);
+                break;
+
+            case '*':fmul(a,b);
+                break;
+
+            case '/':fdiv(a,b);
+                break;
+
+            default:
+                cout << "try again";
+                break;
+        }
+        cout << "Do you want to continue (y/n): ";
+        cin >> choose;
+    } while (choose == 'y');
+
+    return 0;
+}
