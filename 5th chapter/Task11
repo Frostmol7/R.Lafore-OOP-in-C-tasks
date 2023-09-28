@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+struct sterling
+{
+    int pounds = 0;
+    int shillings = 0;
+    int pence = 0;
+};
+void enterMoney (sterling &x)
+{
+    cout << "enter your pounds: "; cin >> x.pounds;
+    cout << "enter your shillings: "; cin >> x.shillings;
+    cout << "enter your pence: "; cin >> x.pence;
+    cout <<endl;
+}
+
+void show(sterling x)
+{
+    cout << "You have a "<< x.pounds << " pounds, " << x.shillings << " shillings and " << x.pence << " pence" << endl;
+}
+
+sterling add (sterling x, sterling y)
+{
+    x.pence+= y.pence; x.pence > 12? x.pence-=12,x.shillings++ : x.pence= x.pence;
+    x.shillings+= y.shillings; x.shillings > 20? x.shillings-=20,x.pounds++ : x.shillings= x.shillings;
+    x.pounds+=y.pounds;
+    return x;
+}
+
+int main()
+{
+    sterling a, b, c;
+    enterMoney(a);
+    enterMoney(b);
+
+    c = add(a,b);
+
+    show (a);
+    show (b);
+    show (c);
+    
+    return 0;
+}
