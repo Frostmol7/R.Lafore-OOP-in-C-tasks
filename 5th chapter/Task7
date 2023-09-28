@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+double power(double, int=2);
+char power(char, int=2);
+int power(int, int=2);
+long power(long, int=2);
+float power(float, int=2);
+
+int power(int n, int p)
+{
+    int result = n;
+    for (; p != 1; p--)
+        result *= n;
+    return result;
+}
+
+double power(double n, int p)
+{
+    double result = n;
+    for (; p != 1; p--)
+        result *= n;
+    return result;
+}
+
+long power(long n, int p)
+{
+    long result = n;
+    for (; p != 1; p--)
+        result *= n;
+    return result;
+}
+
+char power(char ch, int p) {
+    char power = 1;
+    for(int i=1; i<=p; i++)
+        power *= ch;
+    return power;
+}
+
+float power(float n, int p)
+{
+    float result = n;
+    for (; p != 1; p--)
+        result *= n;
+    return result;
+}
+
+int main()
+{
+    char awnser;
+    double n;
+    int p, i;
+    float f;
+    long l;
+
+    cout << "Enter double number" << endl;
+    cin >> n;
+    cout << "Do you want to specify the degree of a number? (Y/N)" << endl;
+    cin >> awnser;
+    awnser == 'Y' ?cin >> p, cout << power(n, p)<<endl : cout << power(n)<<endl;
+
+    cout << "Enter float number" << endl;
+    cin >> f;
+    cout << "Do you want to specify the degree of a number? (Y/N)" << endl;
+    cin >> awnser;
+    awnser == 'Y' ?cin >> p, cout << power(f, p)<<endl : cout << power(f)<<endl;
+
+    cout << "Enter char" << endl;
+    cin >> awnser;
+    cout << power(awnser)<<endl;
+
+    cout << "Enter int number" << endl;
+    cin >> i;
+    cout << "Do you want to specify the degree of a number? (Y/N)" << endl;
+    cin >> awnser;
+    awnser == 'Y' ?cin >> p, cout << power(i, p)<<endl : cout << power(i)<<endl;
+
+    cout << "Enter long number" << endl;
+    cin >> l;
+    cout << "Do you want to specify the degree of a number? (Y/N)" << endl;
+    cin >> awnser;
+    awnser == 'Y' ?cin >> p, cout << power(l, p)<<endl : cout << power(l)<<endl;
+
+    return 0;
+}
