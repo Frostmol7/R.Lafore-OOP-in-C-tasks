@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+void swap (Time &a, Time &b)
+{
+    Time tmp=a;
+    a=b;
+    b=tmp;
+}
+
+int main()
+{
+    Time x, y;
+    char dumb;
+    cout << "enter 2 different time numbers in format 00:00:00 " << endl;
+    cin >> x.hours >> dumb >> x.minutes >> dumb >> x.seconds;
+    cin >> y.hours >> dumb >> y.minutes >> dumb >> y.seconds;
+    swap (x, y);
+    cout << "After swap() we see: \n" << x.hours << dumb << x.minutes << dumb << x.seconds <<"\n" << y.hours << dumb << y.minutes << dumb << y.seconds;
+
+    return 0;
+}
