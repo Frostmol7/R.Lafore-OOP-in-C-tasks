@@ -1,0 +1,42 @@
+#include <iostream> 
+using namespace std; 
+ 
+class employee { 
+private: 
+  int number; 
+  float compensation; 
+  
+public: 
+  employee() : number(0), compensation(0) {} 
+  employee(int number, float compensation) : number(number), compensation(compensation){} 
+ 
+  void enterNum(int num) 
+  { 
+    number = num; 
+  } 
+ 
+  void enterComp(float comp) 
+  { 
+    compensation = comp; 
+  } 
+ 
+  void show() 
+  { 
+    cout << "employee №" << number << "worth is " << compensation << endl;; 
+  } 
+}; 
+ 
+int main() 
+{ 
+  employee a, b, c; 
+  int x; float y; 
+  cout << "Enter 3 employees and ther compensation:" << endl; 
+  cout << "employee №"; cin >> x;  a.enterNum(x); cout << "worth is "; cin >> y;  a.enterComp(y); 
+  cout << "employee №"; cin >> x;  b.enterNum(x); cout << "worth is "; cin >> y;  b.enterComp(y); 
+  cout << "employee №"; cin >> x;  c.enterNum(x); cout << "worth is "; cin >> y;  c.enterComp(y); 
+  cout << endl; 
+  a.show(); 
+  b.show(); 
+  c.show(); 
+  return 0; 
+}
