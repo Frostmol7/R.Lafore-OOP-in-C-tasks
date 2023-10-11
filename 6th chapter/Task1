@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Int {
+private:
+  int i;
+public:
+  Int() : i(0){}
+  Int(int ii): i(ii){}
+  void add(Int i2, Int i3)
+  {i=i2.i+i3.i;}
+  
+  void display()
+  {cout<<i<<endl;}
+};
+
+int main()
+{
+  Int a(7);
+  Int b(11);
+  Int c;
+  c.display(); 
+  c.add(a,b);
+  a.display();
+  b.display();
+  c.display();
+
+  return 0;
+}
