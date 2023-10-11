@@ -1,0 +1,40 @@
+#include <iostream> 
+using namespace std; 
+ 
+class Time { 
+private: 
+  unsigned short seconds; 
+  unsigned short minutes; 
+  unsigned short hours; 
+public: 
+  Time() : seconds(0), minutes(0), hours(0) {} 
+  Time(unsigned short hour, unsigned short min, unsigned short sec) : hours(hour), minutes(min), seconds(sec) {} 
+ 
+  void add(Time a, Time b) 
+  { 
+    seconds = a.seconds + b.seconds;  
+    seconds > 60 ? seconds -= 60, minutes++: a.seconds--; 
+    minutes += a.minutes + b.minutes;  
+    minutes > 60 ? minutes -= 60, hours++: a.seconds--; 
+    hours += a.hours + b.hours; 
+  } 
+ 
+  void display() 
+  { 
+    cout << hours << ":" << minutes << ":" << seconds << endl; 
+  } 
+}; 
+ 
+int main() 
+{ 
+  Time a(12, 36, 57); 
+  Time b(10, 30, 13); 
+  Time c; 
+  a.display(); 
+  b.display(); 
+  c.display(); 
+  c.add(a, b); 
+  c.display(); 
+
+  return 0; 
+}
