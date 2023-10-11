@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class tollBooth {
+private:
+  unsigned int cars;
+  double money;
+public:
+  tollBooth() : cars(0), money(0){}
+  void payingCar()  {money+=0.5; cars++;}
+  void nonpayCar() {cars++;}
+  
+  void display()
+  {cout<<cars<<endl<<money<<endl<<endl;}
+};
+
+int main()
+{
+  tollBooth a;
+  a.display();
+  a.payingCar();
+  a.payingCar();
+  a.payingCar();
+  a.payingCar();
+  a.display();
+  a.nonpayCar();
+  a.nonpayCar();
+  a.nonpayCar();
+  a.display();
+  return 0;
+}
