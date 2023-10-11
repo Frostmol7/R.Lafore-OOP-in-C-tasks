@@ -1,0 +1,30 @@
+#include <iostream> 
+using namespace std; 
+ 
+class Date { 
+private: 
+  unsigned short day; 
+  unsigned short month; 
+  unsigned int year; 
+public: 
+  Date() : day(0), month(0), year(0) {} 
+ 
+  void getDate(unsigned short d, unsigned short m, unsigned int y) 
+  { 
+    day = d; 
+    month = m; 
+    year = y; 
+  } 
+ 
+  void showDate() 
+  { 
+    cout << year << "/" << month << "/" << day; 
+  } 
+}; 
+ 
+int main() 
+{ 
+  Date a; 
+  a.getDate(12, 5, 1984); 
+  a.showDate(); 
+}
