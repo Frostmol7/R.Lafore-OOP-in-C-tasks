@@ -1,0 +1,2 @@
+cout << "Enter No of employ" << endl;
+cin >> i; number = i;
