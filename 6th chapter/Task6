@@ -1,2 +1,74 @@
-cout << "Enter No of employ" << endl;
-cin >> i; number = i;
+#include <iostream> 
+using namespace std;
+struct date
+{
+    int day;
+    int month;
+    int year;
+    char dumb;
+};
+enum etype { laborer, secretary, manager, accountant, executive, researcher };
+
+class employee {
+private:
+    int number;
+    float compensation;
+    date data;
+    etype type;
+
+public:
+    employee() {}
+
+    void getemploy()
+    {
+        cout << "Employ №" << number << " was hired " << data.day << data.dumb << data.month << data.dumb << data.year
+            << " in "; 
+        switch (type)
+        {
+            case laborer:cout <<"laborer position for a " << compensation << endl;
+                break;
+            case secretary:cout << "secretary position for a " << compensation << endl;
+                break;
+            case manager:cout << "manager position for a " << compensation << endl;
+                break;
+            case accountant:cout << "accountant position for a " << compensation << endl;
+                break;
+            case executive:cout << "executive position for a " << compensation << endl;
+                break;
+            case researcher:cout << "researcher position for a " << compensation << endl;
+                break;
+            default:
+                break;
+        }
+    }
+
+    void putemploy()
+    {
+        int i;
+        date hiring;
+        etype post;
+
+        cout << "Enter No of employ" << endl;
+        cin >> i; number = i;
+
+        cout << "Enter compansation of employ" << endl;
+        cin >> i; compensation = i;
+
+        cout << "Enter hiring day in format \" 28/12/2000 \" " << endl;
+        cin >> hiring.day >> hiring.dumb >> hiring.month >> hiring.dumb >> hiring.year;
+        data = hiring;
+
+        cout << "Enter post of employee: laborer =0, secretary=1, manager=2, accountant=3, executive=4, researcher=5" << endl;
+        cin >> i;  post = static_cast<etype>(i); type = post;
+
+    }
+};
+
+int main()
+{
+    employee a;
+    a.putemploy();
+    a.getemploy();
+    
+    return 0;
+}
