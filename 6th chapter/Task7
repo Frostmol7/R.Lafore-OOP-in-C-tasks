@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class angle
+{
+private:
+	int degree;
+	float min;
+	char side;
+
+public:
+	angle(int a, float b, char c) : degree(a), min(b), side(c){}
+	angle(): degree(NULL), min(NULL), side(NULL){}
+
+	void show() 
+	{
+		cout << degree << "\xF8" << min << "\'" << side<<endl;
+	}
+	void getangle()
+	{
+		int degr;
+		float mint;
+		char drct;
+		cout << "Enter the degree: ";
+		cin >> degr; degree = degr;
+		cout << "Enter the minutes: ";
+		cin >> mint; min = mint;
+		cout << "Enter the direction(N, S, E, W): ";
+		cin >> drct; side = drct;
+	}
+};
+
+
+int main()
+{
+	angle a(12, 11.6, 'W');
+	a.show();
+	angle b;
+
+	char awnser;
+	do
+	{
+		b.getangle();
+		b.show();
+		cout << "You wanna continue? \nEnter Y/N"<<endl;
+		cin >> awnser;
+	} while (awnser == 'Y');
+
+	return 0;
+}
