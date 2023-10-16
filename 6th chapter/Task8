@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+class Obj
+{
+private:
+	static int count;
+public:
+	int numb;
+	Obj() { numb = count; count++;};
+	void show() { cout << "I am object number " << numb << endl; };
+};
+
+int Obj::count = 1;
+
+int main()
+{
+	Obj a, b, c;
+	a.show();
+	b.show();
+	c.show();
+
+	return 0;
+}
