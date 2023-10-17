@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class fraction
+{
+private:
+    int Numerator;
+    int Denominator;
+public:
+    void getData()
+    {
+        int a, b;
+        char tmp;
+        cout << "Enter numerator/denominator: ";
+        cin >> a >> tmp >> b;
+        Numerator = a;
+        Denominator = b;
+    }
+
+    void outData()
+    {
+        cout << Numerator << "/" << Denominator << endl;;
+    }
+
+    void add(fraction a)
+    {
+        Numerator = Numerator * a.Denominator + Denominator * a.Numerator;
+        Denominator *= a.Denominator;
+        outData();
+    }
+
+};
+
+
+int main()
+{
+    fraction a, b;
+    char awnser;
+    do
+    {
+        a.getData();
+        b.getData();
+        cout << endl;
+        a.outData();
+        b.outData();
+        cout << endl;
+        a.add(b);
+
+        cout << "Do you want to continue? Y/N" << endl;
+        cin >> awnser;
+    } while (awnser == 'Y'|| awnser == 'y');
+    
+    return 0;
+}
