@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+class ship
+{
+private:
+    int number;
+    int degree;
+    float min;
+    char side;
+    
+public:
+    ship(int num, int a, float b, char c) :number(num), degree(a), min(b), side(c) {}
+    ship() : degree(NULL), min(NULL), side(NULL), number(NULL) {}
+
+	void getangle()
+	{
+		int degr;
+		float mint;
+		char drct;
+		int num;
+
+		cout << "Enter number of the ship: ";
+		cin >> num; number = num;
+
+		cout << "Enter the degree: ";
+		cin >> degr; degree = degr;
+		cout << "Enter the minutes: ";
+		cin >> mint; min = mint;
+		cout << "Enter the direction(N, S, E, W): ";
+		cin >> drct; side = drct;
+	}
+
+	void outData()
+	{
+		cout << "Ship No "<<number << " by coordinates " << degree << "\xF8" << min << "\'" << side << endl;
+	}
+
+};
+
+
+
+int main()
+{
+	ship a, b, c;
+
+	a.getangle();
+	b.getangle();
+	c.getangle();
+
+	cout << endl;
+
+	a.outData();
+	b.outData();
+	c.outData();
+}
