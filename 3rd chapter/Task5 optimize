@@ -1,0 +1,17 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int j,k;
+	for (int i = 1; i < 20; i++)
+	{
+		k = 2*i-1;
+		for (j = 20-i; j > 1; j--) {
+		
+			cout << " ";
+		}
+			cout << setw(k) << setfill('X') << "X" << endl;
+	}
+	return 0;
+}
