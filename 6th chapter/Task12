@@ -1,0 +1,98 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class fraction
+{
+public:
+	fraction() : num(1), den(NULL) {}
+	fraction(int a) : num(1), den(a) {}
+
+	void lowterms(int num, int den) // change ourself to lowest terms
+	{
+		long tnum, tden, temp, gcd;
+		tnum = labs(num); // use non-negative copies
+		tden = labs(den); // (needs cmath)
+		if (tden == 0) // check for n/0
+		{
+			cout << "Illegal fraction : division by 0"; exit(1);
+		}
+		else if (tnum == 0) // check for 0/n
+		{
+			num = 0; den = 1; return;
+		}
+		// this ‘while’ loop finds the gcd of tnum and tden
+		while (tnum != 0)
+		{
+			if (tnum < tden) // ensure numerator larger
+			{
+				temp = tnum; tnum = tden; tden = temp;
+			} // swap them
+			tnum = tnum - tden; // subtract them
+		}
+		gcd = tden; // this is greatest common divisor
+		num = num / gcd; // divide both num and den by gcd
+		den = den / gcd; // to reduce frac to lowest terms
+
+		cout << setw(6) << num << '/' << den;
+	}
+
+	void get()
+	{
+		int denu;
+		cout << "Enter number: ";
+		cin >> denu;
+		den = denu;
+		cout << setw(6);
+		out();
+	}
+
+	void out()
+	{
+		fraction a(den), b(den);
+		cout << setw(12);
+		for (int i = 1; i < den; i++)
+		{
+			cout << i << '/' << den << setw(6);
+		}
+		cout << endl;
+		for (int i = 1; i < den; i++ )
+		{
+			lowterms(i, den);
+			for (int j = 1; j < den; j++)
+			{
+				mult(a, b);
+				b.num++;
+			}
+			a.num++;
+			b.num = 1;
+			cout << endl;
+		}
+	}
+
+	void mult(fraction a, fraction b)
+	{
+		a.num *= b.num;
+		a.den *= b.den;
+		lowterms(a.num, a.den);
+	}
+
+private:
+	int num;
+	int den;
+};
+
+int main()
+{
+	fraction a;
+	char awnser;
+	do
+	{
+		a.get();
+		cout << "\nDo you want to continue? Y/N: ";
+		cin >> awnser;
+	} while (awnser == 'Y' || awnser == 'y');
+
+	return 0;
+}
+//I don't like this code, the top line is slipping
