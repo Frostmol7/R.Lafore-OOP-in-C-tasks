@@ -1,0 +1,17 @@
+#include<iostream>
+#include <cstring>
+using namespace std;
+
+void reversit(char a[])
+{
+    for(int i=strlen(a); i>=0; i--)
+        cout<< a[i];
+}
+
+int main()
+{
+    char a[]{"Able was I ere I saw Elba"};
+    cout << a<<endl;
+    reversit(a);
+    return 0;
+}
