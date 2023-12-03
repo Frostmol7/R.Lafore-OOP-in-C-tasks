@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int n =1;
+class employee
+{
+private:
+    long numb;
+    string name;
+public:
+    void getData()
+    {
+        string s;
+        cout << "Enter No of employ " << n << endl;
+        numb = n;
+        n++;
+        cout << "Enter name of employ" << endl;
+        cin >> s; name = s;
+    }
+
+    void getEmploy()
+    {
+        cout << "Employ No " << numb << " Name: " << name << endl;
+    }
+};
+
+int main()
+{
+    char awnser;
+    employee a[100];
+    int j = 0;
+    do {
+        a[j].getData();
+        j++;
+        cout << "Do you wanna continue? y/n "<<endl;
+        cin >> awnser;
+    }while (awnser !='n');
+    cout << endl;
+    for(int x=0; x!=j;x++)
+        a[x].getEmploy();
+    return 0;
+}
