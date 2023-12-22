@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+class Distance
+{
+private:
+	int feet;
+	float inches;
+
+public:
+	Distance() : feet(0), inches(0) {};
+	void divDist(Distance d2, int divisor)
+	{
+		int fltfeet = feet * 12 + inches;
+		fltfeet /= divisor;
+		feet = fltfeet / 12;
+		inches = fltfeet % 12;
+	}
+
+	Distance addDist(Distance d2)
+	{
+		inches += d2.inches;
+		feet += d2.feet;
+		if (inches > 11.0)
+		{
+			inches -= 12.0;
+			feet++;
+		}
+		feet += d2.feet;
+	}
+
+	void getDist()
+	{
+		cout << "Enter feet: "; cin >> feet;
+		cout << "Enter inches: "; cin >> inches;
+	}
+
+	void showDist() const
+	{
+		cout << feet << "\'" << inches << "\"";
+	}
+};
+
+int main()
+{
+	Distance dist[10], summ;
+	int n = 0;
+	char ans;
+
+	do {
+		dist[n].getDist();
+		summ.addDist(dist[n++]);
+		cout << "Continue? y/n" << endl;
+		cin >> ans;
+	} while (ans != 'n');
+
+	dist[0].divDist(summ, n);
+	summ.showDist();
+
+	return 0;
+}
