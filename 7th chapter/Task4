@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int maxint(int mass[], int n)
+{
+    int ind = 0;
+    for (int i = 1; i < n; i++)
+        if (mass[ind] < mass[i])
+            ind = i;
+    
+    return ind;
+}
+
+int main() {
+    char ans =' ';
+    int n = 0;
+    const int SIZE = 100;
+    int mass[SIZE];
+
+    while(ans != 'n') {
+        cout << "Enter number No" << n+1<<" : ";
+        cin >> mass[n++];
+        cout << "Continue? y/n"<<endl; cin >> ans;
+    }
+
+    cout <<"max element No"<< maxint(mass, n) + 1;
+    return 0;
+}
