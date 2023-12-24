@@ -1,0 +1,79 @@
+
+#include <iostream>
+using namespace std;
+
+class fraction
+{
+private:
+    int num;
+    int den;
+
+public:
+    fraction() : num(0), den(1) {}
+    void lowterms()
+    {
+        long tnum, tden, temp, gcd;
+        tnum = labs(num);
+        tden = labs(den);
+        if (tden == 0)
+        {
+            cout << "Illegal fraction : division by 0"; exit(1);
+        }
+        else if (tnum == 0)
+        {
+            num = 0; den = 1; return;
+        }
+
+        while (tnum != 0)
+        {
+            if (tnum < tden)
+                temp = tnum; tnum = tden; tden = temp;
+            tnum = tnum - tden;
+        }
+        gcd = tden;
+        num = num / gcd;
+        den = den / gcd;
+    }
+    void get()
+    {
+        char tmp;
+        cout << "Enter numerator/denominator: ";
+        cin >> num >> tmp >> den;
+        lowterms();
+    }
+
+    void add(fraction b)
+    {
+        num = num * b.den + b.num * den;
+        den = den * b.den;
+        lowterms();
+    }
+    void sub(int b)
+    {
+        den *= b;
+    }
+    void display()
+    {
+        cout << num <<'/' << den;
+    }
+};
+
+int main ()
+{
+    const int SIZE = 100;
+    fraction mas[SIZE];
+    char ans;
+    int n = 0;
+    fraction averege;
+
+    do {
+        cout << "Enter number No" << n+1<<" : ";
+        mas[n++].get();
+        cout << "Continue? y/n"<<endl; cin >> ans;
+    }while(ans != 'n');
+
+    for (int i = 0; i < n; i++)
+        averege.add(mas[i]);
+    averege.sub(n);
+    averege.display();
+}
