@@ -1,0 +1,77 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+enum Suit
+{clubs, diamonds, hearts, spades};
+const int jack = 11;
+const int queen = 12;
+const int king = 13;
+const int ace = 14;
+
+class card
+{
+public:
+	card() { number = 0; suit = clubs; };
+	void set(int n, Suit s) {suit = s; number = n;}
+	void display() 
+	{
+		if (number >= 2 && number <= 10)
+			cout << number;
+		else 
+		{
+			switch (number)
+			{
+			case jack: cout << 'J'; break;
+			case queen: cout << 'Q'; break;
+			case king: cout << 'K'; break;
+			case ace: cout << 'A'; break;
+			}
+		}
+		switch (suit)
+		{
+		case clubs:    cout << '\x5'; break;
+		case diamonds: cout << '\x4'; break;
+		case hearts:   cout << '\x3'; break;
+		case spades:   cout << '\x6'; break;
+		}
+	}
+private:
+	int number;
+	Suit suit;
+};
+int main()
+{
+	card deck[52];
+	int j;
+
+	for (j= 0; j < 52; j++)
+	{
+		int num = (j % 13) + 2;
+		Suit su = Suit(j / 13);
+		deck[j].set(num, su);
+	}
+
+	cout << endl;
+	srand(time(NULL));
+	for (int n = 0; n < 30; n++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			int k = rand() % 52;
+			card temp = deck[j];
+			deck[j] = deck[k];
+			deck[k] = temp;
+		}
+	}
+
+	for (j = 0; j < 52; j++)
+	{
+		deck[j].display();
+		cout << ' ';
+		if (!((j + 1) % 13))
+			cout << " - player hand" << endl << endl;
+	}
+	return 0;
+}
