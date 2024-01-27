@@ -1,45 +1,30 @@
 #include <iostream>
 using namespace std;
+
+const int leng = 100;
 class money
 {
 private:
 	long double dollars = 0;
 public:
-	long double mstold(char str[]) 
-	{
-		char tmp[100];
-		int n = 0;
-		int point;
-		for (int i = 0; i < ( sizeof(str)/sizeof(str[0]) ); i++)
-		{
-			char oneSimbol = str[i];
-			if (oneSimbol >= '0' && oneSimbol <= '9')
-				tmp[n++] = oneSimbol;
-			else if (oneSimbol <= '.')
-			{
-				point = n;
-				tmp[n++] = oneSimbol;
-			}
-				
-		}
-		tmp[n] = '\0';
-
-		// for char -> long double
-		for (int i = 0; i < (sizeof(tmp) / sizeof(tmp[0])); i++)
-		{
-			if (i == point)
-				continue;
-			dollars += tmp[i] * 10 ^ (point-(i+1));
-		}
-
-		return dollars;
+	long double mstold(const string& moneyString) 
+	{ 
+		 string pureString; 
+		 for (char ch : moneyString) 
+		 { 
+			 if (isdigit(ch) || ch == '.') 
+			 { 
+				 pureString += ch; 
+			 } 
+		 }
+		 return atof(pureString.c_str()); 
 	}
 };
 
 int main()
 {
 	money ms;
-	char tms[80]; 
+	char tms[leng]; 
 	long double res;
 	char ans;
 
@@ -49,8 +34,7 @@ int main()
 
 		res = ms.mstold(tms);
 		cout << "Number type long double: " << res << endl;
-		cout << "Continue? y/n"; cin >> ans;
+		cout << "Continue? y/n : "; cin >> ans;
 	} while (ans != 'n');
-
 	return 0;
 }
