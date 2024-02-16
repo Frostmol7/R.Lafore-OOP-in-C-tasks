@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class safearay {
+private:
+    static const int LIMIT = 100;
+    int arr[LIMIT];
+
+public:
+    void putel(int index, int value) {
+        if (index < 0 || index >= LIMIT) {
+            cout << "Index out of bounds!" << endl;
+            return;
+        }
+        arr[index] = value;
+    }
+
+    int getel(int index) {
+        if (index < 0 || index >= LIMIT) {
+            cout << "Index out of bounds!" << endl;
+            return -1; //exception
+        }
+        return arr[index];
+    }
+};
+
+int main() {
+    safearay sa1; // define a safearay object
+    int temp = 12345; // define an int value
+    sa1.putel(7, temp); // insert value of temp into array at index 7
+    temp = sa1.getel(7); // obtain value from array at index 7
+
+    cout << "Value at index 7: " << sa1.getel(7) << endl;
+
+    return 0;
+}
