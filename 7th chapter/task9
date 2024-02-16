@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+class queue {
+private:
+    static const int MAX = 100;
+    int arr[MAX];
+    int head;
+    int tail;
+
+public:
+    queue() : head(-1), tail(-1) {}
+
+    void put(int data) {
+        if ((head == 0 && tail == MAX - 1) || (tail == head - 1)) {
+            cout << "Queue is full!" << endl;
+            return;
+        }
+
+        if (tail == MAX - 1) {
+            tail = -1;
+        }
+
+        arr[++tail] = data;
+
+        if (head == -1) {
+            head = 0;
+        }
+    }
+
+    int get() {
+        if (head == -1) {
+            cout << "Queue is empty!" << endl;
+            return -1; 
+        }
+
+        int data = arr[head++];
+
+        if (head == MAX) {
+            head = 0;
+        }
+
+        if (head == tail + 1) {
+            head = -1;
+            tail = -1;
+        }
+
+        return data;
+    }
+};
+
+int main() {
+    queue q;
+
+    q.put(10);
+    q.put(20);
+    q.put(30);
+
+    cout << q.get() << endl;
+    cout << q.get() << endl;
+    cout << q.get() << endl;
+
+    return 0;
+}
