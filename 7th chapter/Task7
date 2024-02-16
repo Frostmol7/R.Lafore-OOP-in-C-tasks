@@ -1,38 +1,44 @@
 #include <iostream>
+#include <string>
+#include <cctype>
+#include <cstdlib>
 using namespace std;
+
 class money
 {
-private:
-	long double dollars = 0;
 public:
-	long double mstold(const string& moneyString) 
-	{ 
-		 string pureString; 
-		 for (char ch : moneyString) 
-		 { 
-			 if (isdigit(ch) || ch == '.') 
-			 { 
-				 pureString += ch; 
-			 } 
-		 }
-		 return atof(pureString.c_str()); 
-	}
+    long double mstold(const string& moneyString)
+    {
+        string pureString;
+        for (char ch : moneyString)
+        {
+            if (isdigit(ch) || ch == '.')
+            {
+                pureString += ch;
+            }
+        }
+        return atof(pureString.c_str());
+    }
 };
 
 int main()
 {
-	money ms;
-	char tms[leng]; 
-	long double res;
-	char ans;
+    money ms;
+    const int leng = 100;
+    char tms[leng];
+    long double res;
+    char ans;
 
-	do {
-		cout << "Enter some money (like: $1,234,567.99):\n";
-		cin >> tms;
+    do
+    {
+        cout << "Enter some money (like: $1,234,567.99):\n";
+        cin.getline(tms, leng);
 
-		res = ms.mstold(tms);
-		cout << "Number type long double: " << res << endl;
-		cout << "Continue? y/n : "; cin >> ans;
-	} while (ans != 'n');
-	return 0;
+        res = ms.mstold(tms);
+        cout << "Number type long double: " << res << endl;
+        cout << "Continue? y/n : ";
+        cin >> ans;
+        cin.ignore(); 
+    } while (ans != 'n');
+    return 0;
 }
