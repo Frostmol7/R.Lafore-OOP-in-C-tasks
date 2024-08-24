@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class matrix {
+private:
+    static const int MAX_SIZE = 10;
+    int mat[MAX_SIZE][MAX_SIZE];    //2D mass
+    int rows, cols;                 //size of mass
+
+public:
+    matrix(int r, int c) : rows(r), cols(c) {
+        if (rows > MAX_SIZE || cols > MAX_SIZE) {
+            cout << "Error: Matrix size exceeds maximum limit!" << endl;
+            exit(1);
+        }
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                mat[i][j] = 0;
+    }
+
+    void putel(int r, int c, int value) {
+        if (r < 0 || r >= rows || c < 0 || c >= cols) {
+            cout << "Error: Index out of bounds!" << endl;
+            return;
+        }
+        mat[r][c] = value;
+    }
+
+    int getel(int r, int c) {
+        if (r < 0 || r >= rows || c < 0 || c >= cols) {
+            cout << "Error: Index out of bounds!" << endl;
+            return -1;
+        }
+        return mat[r][c];
+    }
+};
+
+int main() {
+    matrix m1(3, 4);
+    int temp = 12345;
+
+    m1.putel(2, 3, temp);
+    temp = m1.getel(2, 3);
+    cout << "Value at (2, 3): " << temp << endl; // test return value
+    m1.putel(7, 4, temp); // test return error
+    return 0;
+}
